@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl, FormArray} from '@angular/forms';
+import { Apontamento } from 'src/app/models/apontamento/apontamento.model';
 
 @Component({
   selector: 'app-registrar-apontamento',
@@ -7,7 +8,6 @@ import { FormBuilder, FormGroup, Validators, FormControl, FormArray} from '@angu
   styleUrls: ['./registrar-apontamento.component.scss']
 })
 export class RegistrarApontamentoComponent {
-
   formularioApontamento: FormGroup;
 
   constructor(private formBuilder: FormBuilder){
@@ -21,6 +21,11 @@ export class RegistrarApontamentoComponent {
   }
 
   registrarApontamento(){
-    console.log(this.formularioApontamento.value)
+    var apontamento:  Apontamento = new Apontamento()
+    apontamento.data = this.formularioApontamento.get('data')?.value
+    apontamento.horas = this.formularioApontamento.get('horas')?.value
+    apontamento.minutos = this.formularioApontamento.get('minutos')?.value
+    apontamento.descricao = this.formularioApontamento.get('descricao')?.value
+    // Aqui vai o Service para salvar o apontamento
   }
 }
