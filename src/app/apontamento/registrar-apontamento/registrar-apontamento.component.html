@@ -1,1 +1,33 @@
-<p>registrar-apontamento works!</p>
+<div class="container p-4">
+  <form class="row" [formGroup]="formularioApontamento">
+    <!-- <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Modulos</mat-label>
+      <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
+        [matAutocomplete]="auto">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field> -->
+    <mat-form-field appearance="outline" class=" col-2 ">
+      <mat-label>Data: </mat-label>
+      <input type="date" matInput formControlName="data">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class=" col-2 ">
+      <mat-label>Horas </mat-label>
+      <input type="number" matInput formControlName="horas">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class=" col-2 ">
+      <mat-label>Minutos </mat-label>
+      <input type="number" matInput formControlName="minutos">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class=" col-3">
+      <mat-label>Descrição </mat-label>
+      <input type="text" matInput formControlName="descricao">
+    </mat-form-field>
+  </form>
+  <div class="botao">
+    <button class="btn btn-primary" (click)="registrarApontamento()">Salvar Apontamento</button>
+  </div>
+</div>
