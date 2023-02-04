@@ -27,7 +27,7 @@
       <input type="text" matInput formControlName="descricao">
     </mat-form-field>
   </form>
-  <div class="botao">
-    <button class="btn btn-primary" (click)="registrarApontamento()">Salvar Apontamento</button>
+  <div class="botao d-flex justify-content-end">
+    <button class="btn btn-primary" [disabled]="!formularioApontamento.valid" (click)="registrarApontamento()">Salvar Apontamento</button>
   </div>
 </div>

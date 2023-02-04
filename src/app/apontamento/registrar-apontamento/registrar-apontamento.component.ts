@@ -12,7 +12,7 @@ export class RegistrarApontamentoComponent {
 
   constructor(private formBuilder: FormBuilder){
     this.formularioApontamento = formBuilder.group({
-      modulo: [null, Validators.required],
+      modulo: [null],
       data: [null, Validators.required],
       horas: [null, Validators.required],
       minutos: [null, Validators.required],
@@ -28,4 +28,7 @@ export class RegistrarApontamentoComponent {
     apontamento.descricao = this.formularioApontamento.get('descricao')?.value
     // Aqui vai o Service para salvar o apontamento
   }
+
+  get inputError() { return this.formularioApontamento.controls; }
+
 }
